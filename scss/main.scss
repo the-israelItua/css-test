@@ -1,0 +1,344 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "circ";
+  box-sizing: border-box;
+}
+
+@import "./resets";
+@import "./variables";
+
+html {
+  min-height: 100%;
+  scroll-behavior: smooth;
+}
+
+body {
+  background: $bg-color;
+}
+.page {
+  display: flex;
+  @media screen and (max-width: 992px) {
+    display: none;
+  }
+  &__left {
+    width: 60vw;
+    min-height: 97vh;
+    margin: 0.8rem;
+    padding: 3rem 5rem;
+    background: $white;
+    border-radius: 8px;
+    @media screen and (min-width: 992px) and (max-width: 1200px) {
+      padding: 3rem 1rem;
+    }
+    &__header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      align-content: center;
+      &__logo {
+        display: flex;
+        img {
+          margin-right: 0.5rem;
+          height: 2rem;
+          width: 2rem;
+          object-fit: cover;
+        }
+        h4 {
+          font-size: 1rem;
+        }
+      }
+      &__profile {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        align-content: center;
+        background: $bg-color;
+        border-radius: 30px;
+        width: 10rem;
+        height: 2.9rem;
+        padding-left: 0.9rem;
+        p {
+          font-weight: 600;
+          font-size: 0.9rem;
+        }
+        img {
+          width: 2.5rem;
+          height: 2.5rem;
+          object-fit: cover;
+          border-radius: 50%;
+        }
+        i {
+          font-weight: 600;
+        }
+      }
+    }
+    &__top {
+      margin-top: 4rem;
+      display: flex;
+      justify-content: space-between;
+      &__left {
+        display: flex;
+        img {
+          margin: 0.4rem 0.6rem 0 0;
+          width: 1rem;
+          height: 1rem;
+          object-fit: cover;
+        }
+        &__text {
+          h5 {
+            font-size: 0.9rem;
+          }
+          &__sec {
+            margin-top: 0.5rem;
+            p {
+              font-size: 0.8rem;
+              color: $text-grey;
+            }
+          }
+        }
+      }
+    }
+    &__tab {
+      display: flex;
+      border-bottom: 1px solid $text-grey;
+      &__item {
+        margin-right: 3rem;
+        padding-bottom: 1.4rem;
+        color: $text-grey;
+        font-size: 0.95rem;
+      }
+      .active {
+        color: $text-black;
+        border-bottom: 2px solid $text-black;
+      }
+    }
+    &__body {
+      display: flex;
+      padding-top: 4rem;
+      &__cards {
+        width: 40%;
+        img {
+          width: 100%;
+          height: 8rem;
+          object-fit: contain;
+          margin-bottom: 1rem;
+          border-radius: 8px;
+        }
+      }
+      &__form {
+        margin-left: 3rem;
+        width: 60%;
+        &__group {
+          margin-top: 1.1rem;
+          display: block;
+          &__input {
+            position: relative;
+            svg {
+              position: absolute;
+              right: 1rem;
+              top: 1.4rem;
+              fill: $text-grey;
+            }
+            img {
+              position: absolute;
+              right: 1rem;
+              top: 1rem;
+              fill: $text-grey;
+              width: 2rem;
+              height: 2rem;
+            }
+          }
+          label {
+            color: $text-grey;
+            font-weight: bold;
+            font-size: 0.9rem;
+          }
+          input {
+            width: 100%;
+            height: 3rem;
+            background: $bg-color;
+            border-radius: 8px;
+            border: none;
+            outline: none;
+            padding: 0 1rem;
+            font-size: 0.9rem;
+            color: $text-black;
+            font-weight: bold;
+            margin: 0.4rem 0 1rem;
+            &::placeholder {
+              color: $text-black;
+              opacity: 1;
+            }
+          }
+        }
+        &__flex {
+          display: flex;
+          width: 68%;
+          @media screen and (min-width: 992px) and (max-width: 1200px) {
+            width: 72%;
+          }
+          &__left {
+            margin-right: 1.3rem;
+            input {
+              width: 80%;
+            }
+          }
+        }
+        &__buttons {
+          display: flex;
+          justify-content: space-between;
+          margin-top: 3rem;
+          @media screen and (min-width: 992px) and (max-width: 1200px) {
+            margin-top: 2rem;
+          }
+          button {
+            border-radius: 8px;
+            width: 100%;
+            height: 3rem;
+            border: none;
+            outline: none;
+          }
+          &__left {
+            color: $white;
+            background: $black;
+          }
+          &__right {
+            background: $white;
+            color: $text-grey;
+          }
+        }
+      }
+    }
+  }
+  &__right {
+    padding: 4rem 5rem 4rem 3rem;
+    width: 40vw;
+    @media screen and (min-width: 992px) and (max-width: 1200px) {
+      padding: 4rem 2rem;
+    }
+    &__top {
+      display: flex;
+      justify-content: space-between;
+      margin: 4rem 0;
+      &__item {
+        display: flex;
+        &__icon {
+          border-radius: 50%;
+          display: flex;
+          justify-content: center;
+          align-content: center;
+          align-items: center;
+          width: 3rem;
+          height: 3rem;
+          @media screen and (min-width: 992px) and (max-width: 1200px) {
+            width: 2.4rem;
+            height: 2.4rem;
+          }
+          svg {
+            width: 1.5rem;
+            height: 1.5rem;
+            @media screen and (min-width: 992px) and (max-width: 1200px) {
+              width: 1rem;
+              height: 1rem;
+            }
+          }
+          img {
+            width: 1.5rem;
+            height: 1.5rem;
+            @media screen and (min-width: 992px) and (max-width: 1200px) {
+              width: 1rem;
+              height: 1rem;
+            }
+          }
+        }
+        &__blue {
+          background: $blue;
+          svg {
+            fill: $text-blue;
+          }
+        }
+        &__red {
+          background: $red;
+          svg {
+            fill: $text-red;
+          }
+        }
+        &__green {
+          background: $green;
+          svg {
+            fill: $text-green;
+          }
+        }
+        &__text {
+          margin: 0.3rem 0 0 0.6rem;
+          @media screen and (min-width: 992px) and (max-width: 1200px) {
+            margin: 0 0 0 0.6rem;
+          }
+          p {
+            color: $text-grey;
+            font-size: 0.7rem;
+          }
+          h5 {
+            color: $text-grey;
+          }
+        }
+        .active {
+          color: $text-black;
+        }
+      }
+    }
+    &__body {
+      &__select {
+        display: flex;
+        justify-content: space-between;
+        background: $white;
+        border-radius: 8px;
+        padding: 1rem;
+        margin-bottom: 1rem;
+      }
+      &__content {
+        margin: 3rem 1rem;
+        &__item {
+          display: flex;
+          justify-content: space-between;
+          margin-bottom: 1rem;
+          p {
+            color: $text-grey;
+            font-size: 0.9rem;
+          }
+          h5 {
+            color: $text-black;
+          }
+          &__bold {
+            font-weight: bold;
+            color: $text-black !important;
+          }
+        }
+      }
+    }
+    &__total {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 4.4rem;
+      @media screen and (min-width: 992px) and (max-width: 1200px) {
+        margin-top: 4rem;
+      }
+      p {
+        font-size: 0.8rem;
+        font-weight: bold;
+      }
+    }
+  }
+}
+
+.no-view {
+  display: none;
+  @media screen and (max-width: 991px) {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+  }
+}
